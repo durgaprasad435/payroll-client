@@ -1,0 +1,14 @@
+.add-employee {
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+  gap: 20px;
+}
+.date-picker {
+  border: 1px solid rgba(128, 128, 128, 0.405);
+  border-radius: 5px;
+  width: -webkit-fill-available;
+  min-height: 40px;
+}
+.react-datepicker-wrapper {
+  min-width: 100%;
+}

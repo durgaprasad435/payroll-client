@@ -1,0 +1,28 @@
+.contact-container {
+  display: flex;
+  flex-direction: row;
+}
+.contact-container .left-side {
+  width: 30%;
+  background-color: #470a9ce1;
+  padding: 2.5em;
+  min-height: 88.5vh;
+  color: rgba(240, 248, 255, 0.834);
+}
+.contact-container .right-side {
+  width: 70%;
+  padding-left: 10em;
+  padding-top: 4em;
+  padding-right: 10em;
+}
+.contact-container .right-side .send-btn {
+  margin-top: 25px;
+  background-color: #470a9ca5;
+  color: rgb(255, 254, 253);
+  width: -webkit-fill-available;
+}
+.contact-container .right-side .spinner {
+  z-index: 1;
+  position: absolute;
+  left: 200px;
+}

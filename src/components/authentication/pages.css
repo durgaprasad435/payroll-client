@@ -1,0 +1,19 @@
+* {
+  box-sizing: border-box;
+}
+
+.card-container {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-size: cover;
+  background-image: url(../../assets/backgroundImg.jpg);
+}
+.login-link {
+  color: mediumblue;
+  text-decoration: underline;
+}
+.register-btn {
+  width: 100% !important;
+}
