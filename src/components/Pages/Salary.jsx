@@ -82,7 +82,7 @@ function Salary() {
         setAllEmployees(result);
         setIsLoading(false);
       } else {
-        console.log("err", data);
+        console.error("err", data);
       }
     });
     service.getEmployeesSalaryDetails().then((data) => {
@@ -91,7 +91,7 @@ function Salary() {
         setAllSalaries(result);
         setIsLoading(false);
       } else {
-        console.log("err", data);
+        console.error("err", data);
       }
     });
   }, []);

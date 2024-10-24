@@ -41,13 +41,11 @@ const Employee = (props) => {
   const [showTemplateModal, setShowTemplateModal] = useState(false);
   const { isOpen, onOpen, onClose } = useDisclosure();
   useLayoutEffect(() => {
-    console.log("render");
     service.GetAllEmployees().then((data) => {
       if (data.status === "success") {
         setAllEmployees(data.data);
-        console.log(data.data);
       } else {
-        console.log("err", data);
+        console.error("err", data);
       }
     });
   }, []);
@@ -75,7 +73,6 @@ const Employee = (props) => {
         setAllEmployees(data.data);
         onClose();
       } else {
-        console.log("err", data);
         toast(
           utils.getToastNotification(
             "error",

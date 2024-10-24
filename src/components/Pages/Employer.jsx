@@ -81,10 +81,8 @@ function EmployerDetails() {
       companyLogo: formValues.companyLogo, // base64 image string
       employeerEmail: formValues.employerEmail,
     };
-    console.log("Form Data:", formData);
     service.AddEmployeerDetails(formData).then((data) => {
       if (data.status === "success") {
-        console.log(data);
         navigate("/login");
         // Clear the form after submission
         setFormValues(initialFormState);

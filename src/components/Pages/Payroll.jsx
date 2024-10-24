@@ -101,26 +101,22 @@ function Payroll() {
     setSelectedYear(currentDate.getFullYear());
     const savedLogoUrl = localStorage.getItem("logoUrl");
     if (savedLogoUrl) {
-      console.log(JSON.parse(savedLogoUrl));
       const LogoUrl = JSON.parse(savedLogoUrl);
       setCompanyLogoUrl(LogoUrl);
       updateImageDimensions(LogoUrl);
     }
     service.getEmployeesSalaryDetails().then((data) => {
       if (data.status === "success") {
-        console.log(data);
         setSalaries(data.data);
       }
     });
     service.GetAllEmployees().then((data) => {
       if (data.status === "success") {
-        console.log(data);
         setEmployees(data.data);
       }
     });
     service.GetEmployeerDetails().then((data) => {
       if (data.status === "success") {
-        console.log(data);
         setEmployeerData(data.data[4]);
         updateImageDimensions();
       }
@@ -261,7 +257,6 @@ function Payroll() {
     }
 
     try {
-      console.log(imageDimensions);
       // Now that the dimensions are set, continue with the PDF generation and email
       const activeEmployee = employees.find(
         (employee) => employee.employeeId === item.employeeId
@@ -317,7 +312,6 @@ function Payroll() {
         if (!isSalarySwitchOn) {
           toast(utils.getToastNotification("success", response.data.message));
         }
-        console.log("Email sent successfully!");
       } else {
         console.error("Failed to send email", response);
         toast(utils.getToastNotification("error", "Failed to send email"));

@@ -45,7 +45,6 @@ function AddEmployee(props) {
   const toast = useToast();
   const handleChange = (e) => {
     if (isEdit) {
-      //console.log("render");
       setExistingDetails({
         ...exitingDetails,
         [e.target.name]: e.target.value,
@@ -68,10 +67,8 @@ function AddEmployee(props) {
     } else {
       employeeDetails = details;
     }
-    console.log("employeeDetails", employeeDetails);
     services.AddEmployee(employeeDetails).then((data) => {
       if (data.status === "success") {
-        console.log("Employee details added successfully");
         toast(
           utils.getToastNotification(
             "success",
@@ -95,7 +92,6 @@ function AddEmployee(props) {
     if (props.Details !== null) {
       setIsEdit(true);
       setExistingDetails(props.Details);
-      console.log(props.Details);
     }
   }, []);
   return (

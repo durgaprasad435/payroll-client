@@ -85,7 +85,6 @@ function Login(props) {
           toast(utils.getToastNotification("success", data.message));
           navigate("/");
         } else {
-          console.log(data);
           toast(
             utils.getToastNotification(
               "error",

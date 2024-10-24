@@ -18,7 +18,6 @@ function Header({ UName }) {
   useEffect(() => {
     services.GetEmployeerDetails().then((data) => {
       if (data.status === "success") {
-        console.log(data);
         const employeerDetails = data.data[0];
         setEmployeerData(employeerDetails);
         // Store the logo dimensions in localStorage

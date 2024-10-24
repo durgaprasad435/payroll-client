@@ -83,7 +83,6 @@ function TemplateModal({
         });
 
         setJsonData(json); // Store the converted JSON data
-        console.log("JSON", json);
       };
       reader.readAsArrayBuffer(uploadedFile);
     } else {
@@ -201,7 +200,6 @@ function TemplateModal({
           } else {
             OnUpdateAddressDetails(response.data);
           }
-          console.log("response", response.data);
           toast(utilities.getToastNotification("success", response.message));
         }
       } catch (error) {

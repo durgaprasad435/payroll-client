@@ -54,7 +54,7 @@ const Addresses = () => {
     setIsLoading(true);
     service.getAllEmpAddresses().then((data) => {
       if (data.status === "success") {
-        console.log(data);
+
         setAllAddress(data.data);
       }
     });
@@ -64,7 +64,7 @@ const Addresses = () => {
         setAllEmployees(result);
         setIsLoading(false);
       } else {
-        console.log("err", data);
+        console.error("err", data);
       }
     });
   }, []);
@@ -134,7 +134,6 @@ const Addresses = () => {
     address.employeeId = employeeId;
     await service.addAddresses(address).then((data) => {
       if (data.status === "success") {
-        console.log(data);
         toast(utils.getToastNotification("success", data.message));
         setIsLoading(false);
         setAllAddress(data.data);

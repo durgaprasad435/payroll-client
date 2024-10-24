@@ -28,7 +28,6 @@ function Contact() {
     setDetails({ ...details, [e.target.name]: e.target.value });
   };
   const OnSubmit = () => {
-    console.log(details);
     var { name, email, phoneNumber, message } = details;
     if (name && email && phoneNumber && message !== "") {
       setIsProgress(true);
@@ -43,7 +42,6 @@ function Contact() {
           },
           (err) => {
             toast(utils.getToastNotification("error", "Failed to send Email"));
-            console.log("FAILED...", err);
             setIsProgress(false);
           }
         );

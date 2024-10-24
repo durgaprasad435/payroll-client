@@ -94,14 +94,11 @@ function Register() {
     if (userName && eMail !== "" && password.length >= 8) {
       await services.registerService(userDetails).then((data) => {
         if (data.status === "success") {
-          console.log(data);
           if (data.role === "admin") {
             navigate("/addemployer");
           } else {
             navigate("/login");
           }
-        } else {
-          console.log(data);
         }
       });
     }
